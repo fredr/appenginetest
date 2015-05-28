@@ -3,7 +3,6 @@ package appenginetest
 import (
 	"net/http"
 	"strconv"
-	"time"
 
 	"github.com/gorilla/mux"
 
@@ -91,6 +90,5 @@ func iterate(c appengine.Context, valueMax int, cursor string) error {
 		return err
 	}
 
-	time.Sleep(time.Millisecond * 500)
 	return iterate(c, valueMax, curs.String())
 }
